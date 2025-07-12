@@ -24,10 +24,10 @@ function SidebarContent() {
     <div className="flex h-full flex-col bg-card text-foreground">
       <div className="flex flex-col items-center text-center p-6 border-b border-border">
         <Avatar className="w-24 h-24 mb-4 border-4 border-primary shadow-lg">
-          <AvatarImage src="/user.jpg" alt={user?.name} />
-          <AvatarFallback className="text-2xl bg-primary text-primary-foreground">{user?.name?.charAt(0) || 'A'}</AvatarFallback>
+          <AvatarImage src="/user.jpg" alt={user?.user_metadata?.full_name as string || 'User'} />
+          <AvatarFallback className="text-2xl bg-primary text-primary-foreground">{(user?.user_metadata?.full_name as string)?.charAt(0) || 'A'}</AvatarFallback>
         </Avatar>
-        <h2 className="text-xl font-semibold text-primary-foreground">{user?.name || 'Admin User'}</h2>
+        <h2 className="text-xl font-semibold text-primary-foreground">{user?.user_metadata?.full_name as string || 'Admin User'}</h2>
       </div>
       <nav className="flex-grow p-4 space-y-2" >
         {navLinks.map((link) => (

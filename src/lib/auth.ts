@@ -1,18 +1,6 @@
 
 import { supabase } from './supabase';
-import { User as SupabaseUser } from '@supabase/supabase-js';
-
-interface User {
-  id: string;
-  email: string;
-  name: string;
-}
-
-const mapSupabaseUserToUser = (supabaseUser: SupabaseUser): User => ({
-  id: supabaseUser.id,
-  email: supabaseUser.email || '',
-  name: (supabaseUser.user_metadata?.full_name as string) || '',
-});
+import { User } from '@supabase/supabase-js';
 
 export const signup = async (email: string, password: string, name: string): Promise<User> => {
   const { data, error } = await supabase.auth.signUp({
@@ -34,7 +22,7 @@ export const signup = async (email: string, password: string, name: string): Pro
     throw new Error('User not created');
   }
 
-  return mapSupabaseUserToUser(data.user);
+  return data.user;
 };
 
 export const login = async (email: string, password: string): Promise<User> => {
@@ -52,7 +40,7 @@ export const login = async (email: string, password: string): Promise<User> => {
     throw new Error('User not found');
   }
 
-  return mapSupabaseUserToUser(data.user);
+  return data.user;
 };
 
 export const logout = async (): Promise<void> => {
@@ -64,11 +52,11 @@ export const logout = async (): Promise<void> => {
 };
 
 export const getCurrentUser = async (): Promise<User | null> => {
-  const { data: { user: supabaseUser } } = await supabase.auth.getUser();
+  const { data: { user } } = await supabase.auth.getUser();
 
-  if (!supabaseUser) {
+  if (!user) {
     return null;
   }
 
-  return mapSupabaseUserToUser(supabaseUser);
+  return user;
 };
