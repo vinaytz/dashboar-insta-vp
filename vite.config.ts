@@ -1,10 +1,10 @@
+vite.cconfig.tss
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/dashboar-insta-vp/', 
   plugins: [react()],
   resolve: {
     alias: {
@@ -14,4 +14,5 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['pg', 'bcryptjs', 'jsonwebtoken'],
   },
+  
 });
