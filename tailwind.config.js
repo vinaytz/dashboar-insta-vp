@@ -18,38 +18,38 @@ module.exports = {
     },
     extend: {
       colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        border: "hsl(140 20% 20%)",
+        input: "hsl(140 20% 20%)",
+        ring: "hsl(140 60% 40%)",
+        background: "hsl(140 20% 10%)",
+        foreground: "hsl(140 10% 90%)",
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: "hsl(140 60% 40%)",
+          foreground: "hsl(140 10% 98%)",
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+          DEFAULT: "hsl(140 20% 20%)",
+          foreground: "hsl(140 10% 90%)",
         },
         destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
+          DEFAULT: "hsl(0 60% 50%)",
+          foreground: "hsl(140 10% 98%)",
         },
         muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
+          DEFAULT: "hsl(140 20% 20%)",
+          foreground: "hsl(140 10% 60%)",
         },
         accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
+          DEFAULT: "hsl(140 20% 20%)",
+          foreground: "hsl(140 10% 90%)",
         },
         popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
+          DEFAULT: "hsl(140 20% 10%)",
+          foreground: "hsl(140 10% 90%)",
         },
         card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
+          DEFAULT: "hsl(140 20% 15%)",
+          foreground: "hsl(140 10% 90%)",
         },
       },
       borderRadius: {
