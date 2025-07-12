@@ -5,9 +5,12 @@ import './index.css';
 import { AuthProvider } from './context/AuthContext';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
+  
   <React.StrictMode>
+    <BrowserRouter basename="/dashboar-insta-vp/">
     <AuthProvider>
       <App />
     </AuthProvider>
+    </BrowserRouter>
   </React.StrictMode>,
 );
